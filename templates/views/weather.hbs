@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>headerlinks}}
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container-fuild main-menu">
+        <div class="row">
+            <div class="col-md-10 col-12 mx-auto">
+
+                <div class="mainContent">
+                    <form class="tempForm">
+                        <input type="text" id="cityname" placeholder="Enter your city name" autocomplete="off">
+                        <input type="submit" value="search" id="submitBtn">
+                    </form>
+                </div>
+                <div class="tempInfo">
+                    <div class="topLayer">
+                        <p id="day">Tuesday</p>
+                        <p id="date">08 April</p>
+                    </div>
+                    <div class="mainLayer">
+                        <p id="cityName">Get output here</p>
+                    <div class="middleLayer">
+                        <p id="temp"><span id="tempVal">0</span> <sup>o</sup>C</p>
+                        <p id="tempStatus">
+                            <i class="fa fa-cloud"></i>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+<script src="js/main.js"></script>
+
+<script>
+    
+    const getCurrentDay=()=>{
+    let weekDay=["Monday","Tuesday","Wednesday","Friday","Saturday","Sunday"]
+    let currentTime=new Date();
+    let Days= weekDay[currentTime.getDay()];
+
+    let day=document.getElementById("day");
+    day.innerText=Days;
+}
+getCurrentDay();
+
+const getCurrentMonth=()=>{
+    let month=["Jan","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+    let currentMonth=new Date();
+    let date=currentMonth.getDate();
+    let monthData=month[currentTime.getMonth()+1];
+
+    let date=document.getElementById("date");
+    date.innerText=date+" "+monthData;
+
+}
+getCurrentMonth();
+</script>
+</html>
